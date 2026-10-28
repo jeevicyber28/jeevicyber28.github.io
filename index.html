@@ -3,2466 +3,967 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeeviraj V — Cybersecurity | Ethical Hacking | Full-Stack Dev | SOC Analyst</title>
-  <meta name="description" content="Official portfolio of Jeeviraj V: Cybersecurity undergraduate, CTF champion (1st Prize Mirage CTF 2.0, 2nd Prize SUSTAINVERSE), Certified LLM Security Expert (CLLMSE), SOC Analyst in training.">
-  <meta name="keywords" content="jeeviportfolio, jeevi portfolio, jeeviraj v, cybersecurity portfolio, ethical hacking, soc analyst, hostelfix, ai-nids, sri shakthi institute">
+  <title>Jeeviraj V — Cybersecurity & Ethical Hacking Portfolio</title>
+  <meta name="description" content="Portfolio of Jeeviraj V: Cybersecurity specialist, Ethical Hacker, CTF Champion (1st Prize Mirage CTF 2.0, 2nd Prize SUSTAINVERSE), Full-Stack Developer, and Certified LLM Security Expert.">
+  <meta name="keywords" content="Jeeviraj V, jeevicyber28, cybersecurity, ethical hacking, soc analyst, portfolio, hostelfix, ai-nids">
   <meta name="author" content="Jeeviraj V">
-  <meta name="robots" content="index, follow">
   
+  <!-- Modern Clean Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <style>
-    :root {
-      --bg: #0D1117;
-      --bg-alt: #111620;
-      --card: #161B22;
-      --card-hover: #1F242C;
-      --card-border: #30363D;
-      --card-border-glow: rgba(250, 204, 21, 0.4);
-      --primary: #FACC15;
-      --primary-hover: #EAB308;
-      --primary-glow: rgba(250, 204, 21, 0.35);
-      --primary-dim: rgba(250, 204, 21, 0.12);
-      --cyan: #22D3EE;
-      --cyan-glow: rgba(34, 211, 238, 0.35);
-      --cyan-dim: rgba(34, 211, 238, 0.12);
-      --text: #F0F6FC;
-      --subtext: #8B949E;
-      --muted: #6E7681;
-      --success: #3FB950;
-      --success-dim: rgba(63, 185, 80, 0.12);
-      --amber: #D29922;
-      --red: #F85149;
-      --red-dim: rgba(248, 81, 73, 0.12);
-      --font-display: 'Outfit', -apple-system, sans-serif;
-      --font-body: 'Inter', -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; color-scheme: dark; }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* 3D Background Canvas */
-    #bg-canvas {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.75;
-    }
-
-    .ambient-glow {
-      position: fixed;
-      top: -120px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 400px;
-      background: radial-gradient(ellipse at center, rgba(250, 204, 21, 0.1), rgba(34, 211, 238, 0.05) 50%, transparent 75%);
-      pointer-events: none;
-      z-index: 1;
-      filter: blur(70px);
-    }
-
-    .cyber-grid-overlay {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-      background-image: 
-        linear-gradient(rgba(250, 204, 21, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(250, 204, 21, 0.02) 1px, transparent 1px);
-      background-size: 50px 50px;
-      mask-image: radial-gradient(ellipse 90% 70% at 50% 15%, black 40%, transparent 95%);
-    }
-
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1220px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 10; }
-
-    /* ---------------- HEADER / NAV ---------------- */
-    header.nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(13, 17, 23, 0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--primary);
-      box-shadow: 0 0 12px var(--primary);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.85); }
-    }
-
-    nav.nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    nav.nav-links a {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--subtext);
-      transition: color var(--transition-fast);
-      position: relative;
-      padding: 6px 0;
-    }
-
-    nav.nav-links a:hover, nav.nav-links a.active { color: var(--text); }
-    nav.nav-links a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width var(--transition-fast);
-      border-radius: 2px;
-    }
-    nav.nav-links a:hover::after, nav.nav-links a.active::after { width: 100%; }
-
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
-
-    .btn-resume {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary);
-      color: #0D1117;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 8px 20px;
-      border-radius: 9999px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 18px var(--primary-glow);
-      transition: all var(--transition-fast);
-    }
-
-    .btn-resume:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(250, 204, 21, 0.55);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--text);
-      width: 42px;
-      height: 42px;
-      border-radius: 8px;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media (max-width: 960px) {
-      nav.nav-links {
-        position: fixed;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: var(--card);
-        border-bottom: 1px solid var(--card-border);
-        flex-direction: column;
-        padding: 24px 32px;
-        gap: 18px;
-        display: none;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-      }
-      nav.nav-links.open { display: flex; }
-      .nav-toggle { display: flex; }
-    }
-
-    /* ---------------- HERO SECTION ---------------- */
-    .hero {
-      padding: 60px 0 40px;
-      position: relative;
-    }
-
-    .hero-split {
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    @media (max-width: 990px) {
-      .hero-split { grid-template-columns: 1fr; gap: 48px; }
-    }
-
-    .hero-status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary-dim);
-      border: 1px solid rgba(250, 204, 21, 0.35);
-      color: var(--primary);
-      padding: 5px 14px;
-      border-radius: 9999px;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    .hero-pretitle {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .hero-name {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 6.2vw, 5.2rem);
-      font-weight: 900;
-      letter-spacing: -1.5px;
-      line-height: 1.05;
-      color: var(--primary);
-      text-shadow: 0 0 45px rgba(250, 204, 21, 0.35);
-      margin-bottom: 14px;
-    }
-
-    .hero-role-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .hero-role-chip {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 6px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--text);
-    }
-
-    .hero-role-chip.accent {
-      border-color: var(--primary);
-      color: var(--primary);
-      background: var(--primary-dim);
-    }
-
-    .hero-tagline {
-      font-size: 1.05rem;
-      color: var(--subtext);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .hero-tagline b { color: var(--text); }
-
-    /* CTA Buttons */
-    .hero-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .btn-view-work {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: #0D1117;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.98rem;
-      padding: 12px 28px;
-      border-radius: 9999px;
-      border: none;
-      box-shadow: 0 4px 20px var(--primary-glow);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-    }
-
-    .btn-view-work:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(250, 204, 21, 0.6);
-    }
-
-    .btn-download-cv {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--card);
-      color: var(--primary);
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.98rem;
-      padding: 11px 26px;
-      border-radius: 9999px;
-      border: 1.5px solid var(--primary);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-    }
-
-    .btn-download-cv:hover {
-      background: var(--primary-dim);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px var(--primary-glow);
-    }
-
-    .btn-contact-me {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: var(--subtext);
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.98rem;
-      padding: 11px 22px;
-      border-radius: 9999px;
-      border: 1px solid var(--card-border);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-    }
-
-    .btn-contact-me:hover {
-      border-color: var(--text);
-      color: var(--text);
-    }
-
-    /* LinkedIn Direct Integration */
-    .linkedin-banner {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      padding: 12px 18px;
-      border-radius: 12px;
-      transition: border-color var(--transition-fast);
-    }
-
-    .linkedin-banner:hover { border-color: var(--primary); }
-
-    .linkedin-icon-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: #0077B5;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .linkedin-text { flex: 1; font-size: 0.85rem; }
-    .linkedin-text b { color: var(--text); display: block; font-size: 0.9rem; }
-    .linkedin-text span { color: var(--subtext); font-family: var(--font-mono); font-size: 0.76rem; }
-    .linkedin-link-arrow { color: var(--primary); font-family: var(--font-mono); font-size: 0.84rem; font-weight: 700; }
-
-    /* ---------------- HERO RIGHT: AVATAR & 4 BADGES ---------------- */
-    .hero-showcase {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      min-height: 460px;
-    }
-
-    .avatar-center-box {
-      position: relative;
-      width: 290px;
-      height: 380px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    /* Low-Poly Yellow Facet Backdrop matching Screenshot 2026-10-22 103418.png */
-    .poly-backdrop {
-      position: absolute;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 310px;
-      height: 340px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .avatar-portrait-img {
-      position: relative;
-      z-index: 2;
-      width: 260px;
-      height: 340px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 20px;
-      border: 2px solid var(--primary);
-      box-shadow: 
-        0 18px 45px rgba(0, 0, 0, 0.75),
-        0 0 30px var(--primary-glow);
-      display: block;
-      transition: transform var(--transition-smooth);
-    }
-
-    .avatar-portrait-img:hover { transform: scale(1.03); }
-
-    /* 4 Badges on the right matching Screenshot */
-    .badge-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-      z-index: 3;
-      margin-left: 18px;
-    }
-
-    .tech-badge-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 205px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-      transition: all var(--transition-fast);
-      cursor: default;
-    }
-
-    .tech-badge-card:hover {
-      border-color: var(--primary);
-      transform: translateX(-5px);
-      box-shadow: 0 10px 28px rgba(250, 204, 21, 0.2);
-    }
-
-    .tech-badge-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--primary-dim);
-      border: 1px solid rgba(250, 204, 21, 0.35);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .tech-badge-info { display: flex; flex-direction: column; }
-    .tech-badge-name { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; color: var(--text); }
-    .tech-badge-sub { font-family: var(--font-mono); font-size: 0.72rem; color: var(--subtext); }
-
-    @media (max-width: 990px) {
-      .hero-showcase { flex-direction: column; gap: 24px; }
-      .badge-stack { display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin-left: 0; }
-    }
-
-    @media (max-width: 580px) {
-      .badge-stack { grid-template-columns: 1fr; }
-    }
-
-    /* ---------------- STAT STRIP ---------------- */
-    .stat-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-top: 48px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .stat-item {
-      padding: 24px 22px;
-      border-right: 1px solid var(--card-border);
-      display: flex;
-      flex-direction: column;
-      transition: background var(--transition-fast);
-    }
-
-    .stat-item:last-child { border-right: none; }
-    .stat-item:hover { background: var(--card-hover); }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2rem, 3.2vw, 2.7rem);
-      line-height: 1.1;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .stat-label { font-size: 0.88rem; font-weight: 600; color: var(--text); }
-    .stat-sublabel { font-size: 0.74rem; color: var(--subtext); font-family: var(--font-mono); margin-top: 2px; }
-
-    @media (max-width: 768px) {
-      .stat-strip { grid-template-columns: repeat(2, 1fr); }
-      .stat-item:nth-child(2) { border-right: none; }
-      .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--card-border); }
-    }
-
-    /* ---------------- SECTION HEADERS ---------------- */
-    section { padding: 85px 0; position: relative; z-index: 10; }
-
-    .sec-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .sec-tag::before {
-      content: "";
-      width: 14px;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    .sec-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.8px;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-
-    .sec-desc {
-      color: var(--subtext);
-      font-size: 1.02rem;
-      max-width: 680px;
-      line-height: 1.6;
-      margin-bottom: 38px;
-    }
-
-    /* ---------------- TILT CARD EFFECT ---------------- */
-    .tilt-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform 0.15s ease-out;
-      will-change: transform;
-    }
-
-    .tilt-card:hover {
-      border-color: var(--primary);
-      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px var(--primary-glow);
-    }
-
-    /* ---------------- ACHIEVEMENTS / TROPHY CABINET ---------------- */
-    .trophy-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: 780px) { .trophy-grid { grid-template-columns: 1fr; } }
-
-    .trophy-card {
-      padding: 26px 28px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      border-left: 4px solid var(--primary);
-    }
-
-    .trophy-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--primary-dim);
-      border: 1px solid rgba(250, 204, 21, 0.4);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-
-    .trophy-badge {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-
-    .trophy-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 6px;
-    }
-
-    .trophy-desc {
-      font-size: 0.88rem;
-      color: var(--subtext);
-      line-height: 1.5;
-    }
-
-    /* ---------------- FEATURED PROJECTS (HostelFix & AI-NIDS) ---------------- */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    @media (max-width: 860px) { .projects-grid { grid-template-columns: 1fr; } }
-
-    .project-card {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-top: 3px solid var(--primary);
-    }
-
-    .project-type-tag {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--primary-dim);
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .project-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--text);
-      margin: 12px 0 8px;
-      line-height: 1.3;
-    }
-
-    .project-subtitle {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      color: var(--cyan);
-      margin-bottom: 14px;
-    }
-
-    .project-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 24px;
-      flex: 1;
-    }
-
-    .project-bullets li {
-      font-size: 0.92rem;
-      color: var(--subtext);
-      position: relative;
-      padding-left: 18px;
-      line-height: 1.55;
-    }
-
-    .project-bullets li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding-top: 16px;
-      border-top: 1px dashed var(--card-border);
-    }
-
-    .project-tag {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      background: rgba(17, 22, 32, 0.8);
-      border: 1px solid var(--card-border);
-      color: var(--primary);
-      padding: 3px 9px;
-      border-radius: 4px;
-    }
-
-    /* ---------------- EDUCATION JOURNEY ---------------- */
-    .edu-timeline-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    @media (max-width: 900px) { .edu-timeline-grid { grid-template-columns: 1fr; } }
-
-    .edu-box {
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-top: 3px solid var(--primary);
-    }
-
-    .edu-box.school-box { border-top-color: var(--cyan); }
-
-    .edu-stage {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .edu-box.school-box .edu-stage { color: var(--cyan); }
-
-    .edu-inst-name {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--text);
-      margin: 8px 0 4px;
-      line-height: 1.35;
-    }
-
-    .edu-spec { font-size: 0.92rem; color: var(--subtext); margin-bottom: 16px; }
-
-    .edu-score-badge {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 6px;
-      background: rgba(17, 22, 32, 0.7);
-      border: 1px solid var(--card-border);
-      padding: 8px 14px;
-      border-radius: 8px;
-    }
-
-    .edu-score-num {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .edu-box.school-box .edu-score-num { color: var(--cyan); }
-    .edu-score-lbl { font-size: 0.78rem; color: var(--subtext); font-family: var(--font-mono); }
-
-    /* ---------------- TECHNICAL ARSENAL ---------------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    @media (max-width: 920px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
-
-    .skill-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .skill-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .skill-card-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--primary-dim);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .skill-card-title {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .skill-chips-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .skill-chip {
-      background: rgba(17, 22, 32, 0.7);
-      border: 1px solid var(--card-border);
-      color: #E5E7EB;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all var(--transition-fast);
-    }
-
-    .skill-chip:hover {
-      border-color: var(--primary);
-      color: #fff;
-      background: var(--primary-dim);
-      transform: translateY(-1px);
-    }
-
-    .skill-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
-
-    /* ---------------- CERTIFICATIONS ---------------- */
-    .cert-filter-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-
-    .cert-filter-group { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .cert-filter-btn {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--subtext);
-      padding: 8px 18px;
-      border-radius: 9999px;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-
-    .cert-filter-btn:hover { color: var(--text); border-color: var(--primary); }
-    .cert-filter-btn.active {
-      background: var(--primary);
-      color: #0D1117;
-      font-weight: 700;
-      border-color: var(--primary);
-      box-shadow: 0 4px 14px var(--primary-glow);
-    }
-
-    .cert-search-input {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--text);
-      padding: 9px 16px;
-      border-radius: 9999px;
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      outline: none;
-      width: 240px;
-      transition: all var(--transition-fast);
-    }
-
-    .cert-search-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 12px var(--primary-glow);
-    }
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    @media (max-width: 980px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .cert-grid { grid-template-columns: 1fr; } }
-
-    .cert-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: all var(--transition-smooth);
-    }
-
-    .cert-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--primary);
-      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 20px var(--primary-glow);
-    }
-
-    .cert-thumb-box {
-      width: 100%;
-      height: 180px;
-      overflow: hidden;
-      background: #000;
-      position: relative;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .cert-thumb-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.4s ease;
-      display: block;
-    }
-
-    .cert-card:hover .cert-thumb-box img { transform: scale(1.06); }
-
-    .cert-view-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(13, 17, 23, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity var(--transition-fast);
-    }
-
-    .cert-card:hover .cert-view-overlay { opacity: 1; }
-
-    .cert-view-overlay span {
-      background: var(--primary);
-      color: #0D1117;
-      font-family: var(--font-display);
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 9999px;
-    }
-
-    .cert-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
-
-    .cert-badge {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 4px;
-      display: inline-block;
-      font-weight: 700;
-      margin-bottom: 10px;
-      width: fit-content;
-    }
-
-    .badge-cat-ctf { background: var(--red-dim); color: var(--red); border: 1px solid rgba(248, 81, 73, 0.3); }
-    .badge-cat-internship { background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(250, 204, 21, 0.3); }
-    .badge-cat-course { background: rgba(234, 179, 8, 0.15); color: var(--amber); border: 1px solid rgba(234, 179, 8, 0.3); }
-
-    .cert-title {
-      font-family: var(--font-display);
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 8px;
-    }
-
-    .cert-issuer { font-size: 0.84rem; color: var(--subtext); margin-bottom: 14px; }
-    .cert-footer {
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px dashed var(--card-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .cert-date { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); }
-    .cert-cta-link { font-family: var(--font-mono); font-size: 0.78rem; color: var(--primary); font-weight: 700; }
-
-    /* ---------------- CONTACT SECTION ---------------- */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 38px;
-    }
-
-    @media (max-width: 900px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 540px) { .contact-grid { grid-template-columns: 1fr; } }
-
-    .contact-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .contact-icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--primary-dim);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .contact-copy-btn {
-      background: transparent;
-      border: 1px solid var(--card-border);
-      color: var(--muted);
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-    }
-
-    .contact-copy-btn:hover { border-color: var(--primary); color: var(--primary); }
-
-    .contact-k { font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; color: var(--muted); }
-    .contact-v { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; color: var(--text); word-break: break-all; }
-
-    /* ---------------- FOOTER ---------------- */
-    footer {
-      border-top: 1px solid var(--card-border);
-      padding: 45px 0 55px;
-      position: relative;
-      z-index: 10;
-      background: #080B0F;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    .footer-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--primary);
-      background: var(--primary-dim);
-      padding: 4px 12px;
-      border-radius: 9999px;
-      border: 1px solid rgba(250, 204, 21, 0.3);
-    }
-
-    /* ---------------- LIGHTBOX & MODALS ---------------- */
-    .lightbox-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.94);
-      backdrop-filter: blur(12px);
-      z-index: 999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .lightbox-modal.open { display: flex; }
-
-    .lightbox-content {
-      max-width: 920px;
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .lightbox-header {
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--card-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #0D1117;
-    }
-
-    .lightbox-close {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      color: var(--text);
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-close:hover { background: var(--red-dim); color: var(--red); }
-
-    .lightbox-img-box {
-      width: 100%;
-      max-height: 72vh;
-      overflow: auto;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px;
-    }
-
-    .lightbox-img-box img { max-width: 100%; max-height: 70vh; object-fit: contain; }
-
-    /* RESUME MODAL */
-    .resume-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.92);
-      backdrop-filter: blur(12px);
-      z-index: 999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .resume-modal.open { display: flex; }
-
-    .resume-paper {
-      background: #FFFFFF;
-      color: #0F172A;
-      max-width: 840px;
-      width: 100%;
-      max-height: 88vh;
-      overflow-y: auto;
-      border-radius: 12px;
-      padding: 38px 46px;
-      position: relative;
-      font-family: 'Inter', -apple-system, sans-serif;
-    }
-
-    .resume-modal-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: #E2E8F0;
-      border: none;
-      color: #334155;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    .resume-header { border-bottom: 2px solid #CA8A04; padding-bottom: 16px; margin-bottom: 20px; }
-    .resume-name { font-size: 26px; font-weight: 800; color: #0F172A; }
-    .resume-role { font-size: 15px; color: #CA8A04; font-weight: 700; margin-top: 2px; }
-    .resume-contacts { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12.5px; color: #475569; margin-top: 8px; }
-    .resume-sec-title { font-size: 14px; font-weight: 700; text-transform: uppercase; color: #CA8A04; border-bottom: 1px solid #E2E8F0; padding-bottom: 4px; margin: 16px 0 10px; }
-
-    /* Toast */
-    .toast {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: var(--card);
-      border: 1px solid var(--primary);
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px var(--primary-glow);
-      z-index: 1000;
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .toast.show { transform: translateY(0); opacity: 1; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <canvas id="bg-canvas"></canvas>
-  <div class="cyber-grid-overlay"></div>
-  <div class="ambient-glow"></div>
+  <!-- Outer Window Container (macOS / App Frame) -->
+  <div class="window-container">
+    
+    <!-- Top Window Frame with Traffic Light Dots -->
+    <div class="window-titlebar">
+      <div class="window-controls">
+        <span class="control-dot dot-red" title="Close"></span>
+        <span class="control-dot dot-yellow" title="Minimize"></span>
+        <span class="control-dot dot-green" title="Maximize"></span>
+      </div>
+      <div class="window-title-text">jeevicyber28.github.io — Spotlight Portfolio</div>
+      <div class="window-actions">
+        <span class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span>Open for SOC &amp; Security Roles</span>
+        </span>
+      </div>
+    </div>
 
-  <!-- Header -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="#about" class="logo">
-        <span class="logo-dot"></span>
-        <span>Jeeviraj V</span>
-      </a>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#about" class="active">Home</a>
-        <a href="#achievements">Wins &amp; Trophies</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="resume.pdf" download="Jeeviraj_V_Resume.pdf" class="btn-resume" title="Download Official Resume PDF">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          Resume
+    <!-- Main Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-inner">
+        <!-- Logo matching Screenshot: "Octocat." -> "Jeevi." -->
+        <a href="#home" class="brand-logo">
+          Jeevi<span class="brand-dot">.</span>
         </a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-      </div>
-    </div>
-  </header>
 
-  <div class="wrap">
+        <!-- Links matching Screenshot: About, Expertise, Work, Contact -->
+        <nav class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#expertise" class="nav-link">Expertise</a>
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#achievements" class="nav-link">Achievements</a>
+          <a href="#certifications" class="nav-link">Certifications</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="about">
-      <div class="hero-split">
-        
-        <!-- Left Hero Text -->
-        <div class="hero-text-col">
-          <div class="hero-status-pill">
-            <span class="logo-dot"></span>
-            <span>AVAILABLE FOR SOC &amp; CYBERSECURITY ROLES</span>
-          </div>
-
-          <div class="hero-pretitle">Hi, I'm</div>
-          <h1 class="hero-name">Jeeviraj V</h1>
-          
-          <div class="hero-role-badges">
-            <span class="hero-role-chip accent">Cybersecurity</span>
-            <span class="hero-role-chip accent">Ethical Hacking</span>
-            <span class="hero-role-chip">Full-Stack Dev</span>
-            <span class="hero-role-chip">SOC Analyst</span>
-          </div>
-
-          <p class="hero-tagline">
-            <b>Cyber Security undergraduate</b> with hands-on experience in ethical hacking, CTFs, Linux, networking, digital forensics, and full-stack development.<br>
-            Winner of <b>1st Prize at Mirage CTF 2.0</b> &amp; <b>2nd Prize at SUSTAINVERSE 2K26</b>. Built high-impact security applications including <b>HostelFix</b> and <b>AI-NIDS</b>.
-          </p>
-
-          <div class="hero-cta-row">
-            <a href="#projects" class="btn-view-work">
-              View Featured Work
-            </a>
-            <a href="resume.pdf" download="Jeeviraj_V_Resume.pdf" class="btn-download-cv">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              Download CV (PDF)
-            </a>
-            <a href="#contact" class="btn-contact-me">
-              Contact Me
-            </a>
-          </div>
-
-          <!-- Direct LinkedIn Feature Strip -->
-          <a href="https://www.linkedin.com/in/jeevi-raj-3bb912338/" target="_blank" rel="noopener" class="linkedin-banner">
-            <div class="linkedin-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </div>
-            <div class="linkedin-text">
-              <b>Connect on LinkedIn &bull; Jeeviraj V</b>
-              <span>linkedin.com/in/jeevi-raj-3bb912338/</span>
-            </div>
-            <span class="linkedin-link-arrow">View Profile &rarr;</span>
+        <!-- Right Action Button (Hire me pill) -->
+        <div class="nav-cta-wrap">
+          <a href="resume.pdf" download="Jeeviraj_V_Resume.pdf" class="btn-ghost-resume" title="Download CV">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>CV</span>
           </a>
+          <a href="#contact" class="btn-hire-me">Hire me</a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+      </div>
+    </header>
 
-        <!-- Right Hero Showcase (Photo + Low-Poly Yellow Backdrop + 4 Badges) -->
-        <div class="hero-showcase">
-          <div class="avatar-center-box">
-            <!-- Faceted Low-Poly Yellow Backdrop -->
-            <svg class="poly-backdrop" viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="150,10 240,60 210,130 150,90" fill="#FACC15" fill-opacity="0.88" />
-              <polygon points="150,10 90,60 150,90" fill="#EAB308" fill-opacity="0.92" />
-              <polygon points="240,60 280,140 210,130" fill="#CA8A04" fill-opacity="0.85" />
-              <polygon points="210,130 280,140 250,230 190,200" fill="#FACC15" fill-opacity="0.8" />
-              <polygon points="90,60 50,140 120,130 150,90" fill="#EAB308" fill-opacity="0.75" />
-              <polygon points="120,130 50,140 80,230 140,200" fill="#A16207" fill-opacity="0.8" />
-              <polygon points="150,90 210,130 190,200 140,200 120,130" fill="#FDE047" fill-opacity="0.9" />
-              <polygon points="140,200 190,200 150,290" fill="#EAB308" fill-opacity="0.75" />
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- =========================================================================
+           1. HERO SECTION (EXACT MATCH TO SCREENSHOT 2026-10-28 102858.png)
+           Red curved wave banner, bold white typography, Mascot & Floating pill
+           ========================================================================= -->
+      <section class="spotlight-hero" id="home">
+        <div class="spotlight-banner">
+          
+          <!-- Banner Text Content -->
+          <div class="spotlight-content">
+            <h1 class="spotlight-title">
+              Hi, I'm <span class="highlight-name">Jeeviraj</span><br>
+              <span class="spotlight-role">Cybersecurity Analyst</span>
+            </h1>
+            <p class="spotlight-tagline">
+              Ethical Hacker &amp; SOC Analyst. Building secure digital fortresses, one defense at a time.
+            </p>
+            <div class="spotlight-cta-row">
+              <a href="#work" class="btn-white-pill">View my work</a>
+              <a href="#contact" class="btn-outline-pill">Contact me</a>
+            </div>
+          </div>
+
+          <!-- Mascot Showcase on the right (Exact matching mascot art) -->
+          <div class="spotlight-mascot-box">
+            <div class="mascot-avatar-wrap">
+              <!-- Octocat / Cyber Mascot Vector Art -->
+              <svg class="octocat-hero-svg" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Drop shadow glow -->
+                <ellipse cx="120" cy="210" rx="65" ry="14" fill="rgba(0,0,0,0.2)"/>
+                <!-- Body / Tentacles -->
+                <path d="M72 165 C55 190 35 185 30 170 C25 155 45 150 70 155" fill="#18181B"/>
+                <path d="M85 172 C70 205 55 200 48 185 C42 170 60 160 85 160" fill="#18181B"/>
+                <path d="M105 178 C95 215 80 210 75 195 C70 180 85 165 105 165" fill="#18181B"/>
+                <path d="M135 178 C145 215 160 210 165 195 C170 180 155 165 135 165" fill="#18181B"/>
+                <path d="M155 172 C170 205 185 200 192 185 C198 170 180 160 155 160" fill="#18181B"/>
+                <path d="M168 165 C185 190 205 185 210 170 C215 155 195 150 170 155" fill="#18181B"/>
+                <path d="M68 135 Q120 180 172 135 L165 175 Q120 190 75 175 Z" fill="#18181B"/>
+                <!-- Head -->
+                <ellipse cx="120" cy="115" rx="65" ry="56" fill="#18181B"/>
+                <!-- Left Cat Ear -->
+                <polygon points="75,70 60,30 98,56" fill="#18181B"/>
+                <polygon points="78,65 68,38 94,54" fill="#F43F5E"/>
+                <!-- Right Cat Ear -->
+                <polygon points="165,70 180,30 142,56" fill="#18181B"/>
+                <polygon points="162,65 172,38 146,54" fill="#F43F5E"/>
+                <!-- Face Mask / Cheeks -->
+                <ellipse cx="98" cy="118" rx="13" ry="18" fill="#FFFFFF"/>
+                <ellipse cx="100" cy="118" rx="7" ry="11" fill="#18181B"/>
+                <circle cx="102" cy="113" r="3.5" fill="#FFFFFF"/>
+                
+                <ellipse cx="142" cy="118" rx="13" ry="18" fill="#FFFFFF"/>
+                <ellipse cx="140" cy="118" rx="7" ry="11" fill="#18181B"/>
+                <circle cx="138" cy="113" r="3.5" fill="#FFFFFF"/>
+
+                <!-- Cute nose & whiskers -->
+                <ellipse cx="120" cy="130" rx="4" ry="2.5" fill="#F43F5E"/>
+                <path d="M115 136 Q120 140 125 136" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- Whiskers -->
+                <line x1="68" y1="120" x2="42" y2="115" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="66" y1="128" x2="38" y2="128" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="68" y1="136" x2="44" y2="142" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+                
+                <line x1="172" y1="120" x2="198" y2="115" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="174" y1="128" x2="202" y2="128" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="172" y1="136" x2="196" y2="142" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+
+              <!-- Floating Dark Pill: "↗ Preview experience" matching screenshot -->
+              <a href="#about" class="floating-preview-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                <span>Preview experience</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom Wave SVG (Clean transition into white about section) -->
+          <div class="banner-bottom-wave">
+            <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+              <path d="M0,0 C300,75 800,85 1200,10 L1200,80 L0,80 Z" fill="#FFFFFF"></path>
             </svg>
-
-            <!-- Portrait -->
-            <img class="avatar-portrait-img" src="profile.jpg" alt="Jeeviraj V Portrait">
           </div>
 
-          <!-- 4 Badges from Screenshot -->
-          <div class="badge-stack">
-            <div class="tech-badge-card">
-              <div class="tech-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           2. ABOUT SECTION (EXACT MATCH TO SCREENSHOT 2026-10-27 221830.png)
+           HELLO! header, A little about me, skill pills, meta bar & HANGING CARD!
+           ========================================================================= -->
+      <section class="hero-section" id="about">
+        <div class="hero-grid">
+          
+          <!-- Left Column -->
+          <div class="hero-left">
+            <span class="hero-badge-tag">HELLO!</span>
+            <h2 class="hero-heading">A little about me</h2>
+            <p class="hero-subheading">
+              Cybersecurity undergraduate &amp; Ethical Hacker. Building in public, one defense at a time. Winner of Mirage CTF 2.0 &amp; SUSTAINVERSE 2K26.
+            </p>
+
+            <!-- Skill Pill Tags (Screenshot Style) -->
+            <div class="skill-pills-row">
+              <span class="pill-badge">Cybersecurity</span>
+              <span class="pill-badge">Ethical Hacking</span>
+              <span class="pill-badge">SOC Analyst</span>
+              <span class="pill-badge">Python</span>
+              <span class="pill-badge">React</span>
+              <span class="pill-badge">Linux</span>
+              <span class="pill-badge">FastAPI</span>
+            </div>
+
+            <!-- Metadata / Social Stats Strip (Screenshot Style) -->
+            <div class="hero-meta-bar">
+              <div class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Coimbatore, India</span>
               </div>
-              <div class="tech-badge-info">
-                <span class="tech-badge-name">Cybersecurity</span>
-                <span class="tech-badge-sub">Ethical Hacking &amp; SOC</span>
+              <a href="https://github.com/jeevicyber28" target="_blank" rel="noopener" class="meta-item meta-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>@jeevicyber28</span>
+              </a>
+              <div class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                <span>1st Prize Mirage CTF</span>
+              </div>
+              <div class="meta-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span>8.01 CGPA · 17+ Certs</span>
               </div>
             </div>
 
-            <div class="tech-badge-card">
-              <div class="tech-badge-icon" style="color: var(--cyan); background: var(--cyan-dim); border-color: rgba(34, 211, 238, 0.4);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-              </div>
-              <div class="tech-badge-info">
-                <span class="tech-badge-name">AI &amp; LLM Security</span>
-                <span class="tech-badge-sub">CLLMSE Certified</span>
-              </div>
-            </div>
-
-            <div class="tech-badge-card">
-              <div class="tech-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              </div>
-              <div class="tech-badge-info">
-                <span class="tech-badge-name">Full-Stack Dev</span>
-                <span class="tech-badge-sub">HostelFix &amp; AI-NIDS</span>
-              </div>
-            </div>
-
-            <div class="tech-badge-card">
-              <div class="tech-badge-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
-              </div>
-              <div class="tech-badge-info">
-                <span class="tech-badge-name">CTF Champion</span>
-                <span class="tech-badge-sub">1st Prize Mirage CTF</span>
-              </div>
+            <!-- Call to Actions -->
+            <div class="hero-buttons">
+              <a href="#work" class="btn-primary-dark">
+                <span>Explore Work</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+              </a>
+              <a href="resume.pdf" download="Jeeviraj_V_Resume.pdf" class="btn-secondary-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download CV</span>
+              </a>
+              <a href="https://www.linkedin.com/in/jeevi-raj-3bb912338/" target="_blank" rel="noopener" class="btn-linkedin-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
             </div>
           </div>
 
+          <!-- Right Column: THE SIGNATURE HANGING CARD (Exact match) -->
+          <div class="hero-right">
+            <div class="hanging-card-wrapper" id="hangingCardWrapper">
+              
+              <!-- Hanging Cord -->
+              <div class="hanging-cord"></div>
+              
+              <!-- Metallic Eyelet Pin -->
+              <div class="eyelet-ring">
+                <div class="eyelet-hole"></div>
+              </div>
+
+              <!-- Red Rectangular Hanging Badge -->
+              <div class="red-hanging-card" id="hangingCard">
+                
+                <!-- Badge View 1: Octocat Mascot -->
+                <div class="badge-card-view mascot-view active" id="mascotView">
+                  <div class="octocat-art-box">
+                    <svg class="octocat-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <ellipse cx="100" cy="115" rx="55" ry="48" fill="#18181B"/>
+                      <polygon points="62,75 52,42 82,65" fill="#18181B"/>
+                      <polygon points="65,70 57,48 80,64" fill="#F43F5E"/>
+                      <polygon points="138,75 148,42 118,65" fill="#18181B"/>
+                      <polygon points="135,70 143,48 120,64" fill="#F43F5E"/>
+                      <ellipse cx="80" cy="112" rx="10" ry="14" fill="#FFFFFF"/>
+                      <ellipse cx="82" cy="112" rx="5" ry="8" fill="#18181B"/>
+                      <circle cx="84" cy="108" r="2.5" fill="#FFFFFF"/>
+                      <ellipse cx="120" cy="112" rx="10" ry="14" fill="#FFFFFF"/>
+                      <ellipse cx="118" cy="112" rx="5" ry="8" fill="#18181B"/>
+                      <circle cx="116" cy="108" r="2.5" fill="#FFFFFF"/>
+                      <ellipse cx="100" cy="125" rx="3" ry="2" fill="#F43F5E"/>
+                      <path d="M96 130 Q100 134 104 130" stroke="#18181B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                      <path d="M60 140 Q45 160 35 150 Q48 135 68 142" fill="#18181B"/>
+                      <path d="M75 150 Q65 175 55 170 Q62 148 80 148" fill="#18181B"/>
+                      <path d="M90 152 Q88 180 82 178 Q82 152 95 150" fill="#18181B"/>
+                      <path d="M110 152 Q112 180 118 178 Q118 152 105 150" fill="#18181B"/>
+                      <path d="M125 150 Q135 175 145 170 Q138 148 120 148" fill="#18181B"/>
+                      <path d="M140 140 Q155 160 165 150 Q152 135 132 142" fill="#18181B"/>
+                    </svg>
+                  </div>
+                  <div class="card-caption">
+                    <span class="card-name">Octocat &bull; Security Mascot</span>
+                    <span class="card-role">Cyber Guard &amp; Hacking Prodigy</span>
+                  </div>
+                </div>
+
+                <!-- Badge View 2: Jeeviraj's Portrait Photo -->
+                <div class="badge-card-view portrait-view" id="portraitView">
+                  <div class="portrait-photo-box">
+                    <img src="profile.jpg" alt="Jeeviraj V" class="card-profile-img">
+                  </div>
+                  <div class="card-caption">
+                    <span class="card-name">Jeeviraj V</span>
+                    <span class="card-role">CSE (Cyber Security) &bull; Sri Shakthi</span>
+                  </div>
+                </div>
+
+                <!-- Card Toggle Pill -->
+                <div class="card-toggle-pill" id="cardToggleBtn" title="Click to toggle between Mascot & Photo">
+                  <span class="toggle-option active" id="toggleMascot">Mascot</span>
+                  <span class="toggle-divider">/</span>
+                  <span class="toggle-option" id="togglePhoto">Photo</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           3. EXPERTISE SECTION
+           ========================================================================= -->
+      <section class="section-block" id="expertise">
+        <div class="section-header">
+          <span class="section-tag">Core Capabilities</span>
+          <h2 class="section-title">Technical Expertise</h2>
+          <p class="section-subtitle">
+            Battle-tested competencies across offensive penetration testing, defensive SOC telemetry, and secure application engineering.
+          </p>
         </div>
 
-      </div>
+        <div class="expertise-grid">
+          <div class="clean-card">
+            <div class="card-icon-header">
+              <div class="icon-circle red-tint">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <span class="card-status-badge">Offensive</span>
+            </div>
+            <h3 class="card-title">Ethical Hacking &amp; Pentesting</h3>
+            <p class="card-text">
+              Hands-on vulnerability assessment, OWASP Top 10 exploitation, Burp Suite intercepting proxies, and API security auditing.
+            </p>
+            <div class="card-tags">
+              <span>Burp Suite</span>
+              <span>OWASP</span>
+              <span>Nmap</span>
+              <span>Kali Linux</span>
+            </div>
+          </div>
 
-      <!-- Stat Strip -->
-      <div class="stat-strip">
-        <div class="stat-item tilt-card">
-          <div class="stat-number">1st</div>
-          <div class="stat-label">Prize Winner</div>
-          <div class="stat-sublabel">Mirage CTF 2.0 (16-Hr Hackathon)</div>
-        </div>
-        <div class="stat-item tilt-card">
-          <div class="stat-number">8.01</div>
-          <div class="stat-label">CGPA / 10.0</div>
-          <div class="stat-sublabel">0 Arrears &bull; 3rd Year CSE (Cyber)</div>
-        </div>
-        <div class="stat-item tilt-card">
-          <div class="stat-number" style="color: var(--cyan);">#70</div>
-          <div class="stat-label">of 1,253 Teams</div>
-          <div class="stat-sublabel">z0d1ak CTF Qualifiers</div>
-        </div>
-        <div class="stat-item tilt-card">
-          <div class="stat-number">17+</div>
-          <div class="stat-label">Certifications</div>
-          <div class="stat-sublabel">CLLMSE, Google, Cisco, Microsoft</div>
-        </div>
-      </div>
-    </section>
+          <div class="clean-card">
+            <div class="card-icon-header">
+              <div class="icon-circle dark-tint">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <span class="card-status-badge">Defensive</span>
+            </div>
+            <h3 class="card-title">SOC Operations &amp; Telemetry</h3>
+            <p class="card-text">
+              Network packet dissection via Wireshark and Scapy, alert triage orchestration, MITRE ATT&amp;CK mapping, and SIEM analysis.
+            </p>
+            <div class="card-tags">
+              <span>Wireshark</span>
+              <span>Scapy</span>
+              <span>MITRE ATT&amp;CK</span>
+              <span>Digital Forensics</span>
+            </div>
+          </div>
 
+          <div class="clean-card">
+            <div class="card-icon-header">
+              <div class="icon-circle red-tint">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <span class="card-status-badge">Certified</span>
+            </div>
+            <h3 class="card-title">AI &amp; LLM Security</h3>
+            <p class="card-text">
+              Certified LLM Security Expert (CLLMSE). Defense against prompt injection, jailbreaks, training data poisoning, and model evasion.
+            </p>
+            <div class="card-tags">
+              <span>CLLMSE</span>
+              <span>Prompt Security</span>
+              <span>Machine Learning</span>
+              <span>FastAPI</span>
+            </div>
+          </div>
 
-    <!-- MAJOR ACHIEVEMENTS & TROPHY CABINET -->
-    <section id="achievements">
-      <div class="sec-tag">Competitive Excellence</div>
-      <h2 class="sec-title">Achievements &amp; Hackathon Wins</h2>
-      <p class="sec-desc">Demonstrated tournament-tested capability across high-stakes 24-hour hackathons and international CTF competitions.</p>
-
-      <div class="trophy-grid">
-        <div class="tilt-card trophy-card">
-          <div class="trophy-icon">🏆</div>
-          <div>
-            <div class="trophy-badge">1st Prize Winner &bull; 16-Hour Hackathon</div>
-            <h3 class="trophy-title">Mirage CTF 2.0</h3>
-            <p class="trophy-desc">Won First Place at the competitive 16-hour CTF and hackathon organized by Amrita Vishwa Vidyapeetham, Chennai.</p>
+          <div class="clean-card">
+            <div class="card-icon-header">
+              <div class="icon-circle dark-tint">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <span class="card-status-badge">Engineering</span>
+            </div>
+            <h3 class="card-title">Full-Stack Development</h3>
+            <p class="card-text">
+              Production architectures using React, Node.js, TypeScript, PostgreSQL, WebSockets, and real-time computer vision with YOLO &amp; OpenCV.
+            </p>
+            <div class="card-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>PostgreSQL</span>
+              <span>YOLO</span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="tilt-card trophy-card" style="border-left-color: var(--cyan);">
-          <div class="trophy-icon" style="color: var(--cyan); background: var(--cyan-dim); border-color: rgba(34, 211, 238, 0.4);">🥈</div>
-          <div>
-            <div class="trophy-badge" style="color: var(--cyan);">2nd Prize Winner &bull; 24-Hour Hackathon</div>
-            <h3 class="trophy-title">SUSTAINVERSE 2K26</h3>
-            <p class="trophy-desc">Awarded Second Prize in a grueling 24-hour national hackathon held at DMI College of Engineering, Chennai.</p>
-          </div>
+      <!-- =========================================================================
+           4. FEATURED WORK / PROJECTS SECTION
+           ========================================================================= -->
+      <section class="section-block" id="work">
+        <div class="section-header">
+          <span class="section-tag">Case Studies</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            Real-world security architectures and full-stack software built to solve real operational bottlenecks.
+          </p>
         </div>
 
-        <div class="tilt-card trophy-card" style="border-left-color: var(--cyan);">
-          <div class="trophy-icon" style="color: var(--cyan); background: var(--cyan-dim); border-color: rgba(34, 211, 238, 0.4);">🎖️</div>
-          <div>
-            <div class="trophy-badge" style="color: var(--cyan);">9th Place &bull; International Event</div>
-            <h3 class="trophy-title">$N1PH3RS 3.0 International CTF</h3>
-            <p class="trophy-desc">Secured Top-10 global standing (9th place) in the elite $N1PH3RS 3.0 International CTF at St. Joseph's Institute of Technology.</p>
-          </div>
-        </div>
-
-        <div class="tilt-card trophy-card">
-          <div class="trophy-icon">🚀</div>
-          <div>
-            <div class="trophy-badge">Rank #70 of 1,253 &bull; Global Field</div>
-            <h3 class="trophy-title">z0d1ak CTF Qualifiers</h3>
-            <p class="trophy-desc">Ranked 70th out of 1,253 international competing teams representing team BitBr34kers in binary, web, and crypto challenges.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- FEATURED PROJECTS (HostelFix, AI-NIDS, CyberGuard AI) -->
-    <section id="projects">
-      <div class="sec-tag">Engineering &amp; Research</div>
-      <h2 class="sec-title">Featured Projects</h2>
-      <p class="sec-desc">End-to-end full-stack architectures and applied machine learning tools built to solve critical security and operational challenges.</p>
-
-      <div class="projects-grid">
-        
-        <!-- Project 1: HostelFix -->
-        <div class="tilt-card project-card">
-          <div>
-            <span class="project-type-tag">Full-Stack &bull; Computer Vision &bull; IoT</span>
-            <h3 class="project-title">HostelFix &mdash; Smart Hostel Monitoring System</h3>
-            <div class="project-subtitle">Node.js &bull; PostgreSQL &bull; YOLO &bull; OpenCV &bull; Socket.IO &bull; Telegram API</div>
-            
-            <ul class="project-bullets">
-              <li>Comprehensive hostel management platform with dedicated multi-tier dashboards for <b>Admin, Warden, Student, Security, and Technician</b> roles.</li>
-              <li>Engineered secure <b>JWT authentication, Role-Based Access Control (RBAC)</b>, and instant real-time telemetry updates using Socket.IO.</li>
-              <li>Implemented a digital gate-pass system featuring <b>cryptographic QR verification, digital signatures</b>, and laundry tracking workflows.</li>
-              <li>Integrated <b>AI-based CCTV vision (YOLO &amp; OpenCV)</b> for automated face recognition and fire/smoke hazard detection with instant Telegram Bot alerts.</li>
+        <div class="projects-grid">
+          
+          <!-- Project 1: HostelFix -->
+          <div class="project-card highlight-card">
+            <div class="project-top">
+              <span class="project-pill">Full-Stack &bull; Computer Vision &bull; IoT</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-heading">HostelFix &mdash; Smart Hostel Monitoring System</h3>
+            <p class="project-desc">
+              Comprehensive multi-tier management platform with real-time telemetry dashboards for Admin, Warden, Student, Security, and Technician roles.
+            </p>
+            <ul class="project-features">
+              <li>Cryptographic digital gate-pass system featuring encrypted QR verification and digital sign-offs.</li>
+              <li>Integrated AI-based CCTV computer vision (YOLO &amp; OpenCV) for face recognition &amp; fire/smoke hazard detection.</li>
+              <li>Automated instant alerting engine delivering urgent security notifications directly via Telegram API.</li>
+              <li>Robust JWT authentication, granular Role-Based Access Control (RBAC), and persistent PostgreSQL backend.</li>
             </ul>
+            <div class="project-tech-stack">
+              <span>Node.js</span>
+              <span>PostgreSQL</span>
+              <span>YOLO</span>
+              <span>OpenCV</span>
+              <span>Socket.IO</span>
+              <span>Telegram Bot API</span>
+            </div>
           </div>
-          <div class="project-tags">
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">YOLO</span>
-            <span class="project-tag">OpenCV</span>
-            <span class="project-tag">Socket.IO</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">Telegram Bot</span>
-          </div>
-        </div>
 
-        <!-- Project 2: AI-NIDS -->
-        <div class="tilt-card project-card" style="border-top-color: var(--cyan);">
-          <div>
-            <span class="project-type-tag" style="background: var(--cyan-dim); color: var(--cyan);">Machine Learning &bull; Network Security</span>
-            <h3 class="project-title">AI-Based Network Intrusion Detection System (AI-NIDS)</h3>
-            <div class="project-subtitle">React &bull; TypeScript &bull; Python &bull; FastAPI &bull; Scikit-learn &bull; Scapy</div>
-            
-            <ul class="project-bullets">
-              <li>High-performance NIDS engine classifying network packet streams as <b>NORMAL or ATTACK</b> using trained machine learning models.</li>
-              <li>Trained and tuned <b>Decision Tree and Random Forest classifiers</b> on the NSL-KDD benchmark intrusion detection dataset.</li>
-              <li>Full <b>React / TypeScript dashboard</b> driven by a Python FastAPI backend with live WebSocket streaming, threat alert telemetry, and interactive charts.</li>
-              <li>Real-time wire-level packet metadata capture powered by <b>Scapy and Npcap</b>, logged with persistent SQLite alert storage.</li>
+          <!-- Project 2: AI-NIDS -->
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-pill">Machine Learning &bull; Network Security</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-heading">AI-NIDS &mdash; Network Intrusion Detection System</h3>
+            <p class="project-desc">
+              High-throughput ML-driven intrusion detection engine categorizing wire packet traffic into NORMAL vs. ATTACK vectors in real-time.
+            </p>
+            <ul class="project-features">
+              <li>Trained and tuned Random Forest and Decision Tree classifiers on benchmark NSL-KDD network datasets.</li>
+              <li>Real-time wire-level packet metadata inspection powered by Scapy and Npcap raw sniffers.</li>
+              <li>Full-stack React + TypeScript dashboard backed by Python FastAPI with streaming WebSockets and live charts.</li>
             </ul>
+            <div class="project-tech-stack">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>FastAPI</span>
+              <span>Scikit-learn</span>
+              <span>Scapy</span>
+              <span>WebSockets</span>
+            </div>
           </div>
-          <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">FastAPI</span>
-            <span class="project-tag">Scikit-learn</span>
-            <span class="project-tag">Scapy</span>
-            <span class="project-tag">WebSockets</span>
-            <span class="project-tag">NSL-KDD</span>
-          </div>
-        </div>
 
-        <!-- Project 3: CyberGuard AI -->
-        <div class="tilt-card project-card">
-          <div>
-            <span class="project-type-tag">Published Research &bull; Threat Intel</span>
-            <h3 class="project-title">Phishing Detection Using CyberGuard AI</h3>
-            <div class="project-subtitle">Peer-Reviewed Paper &bull; IJRES Vol. 16, Issue 2 (Apr 2026)</div>
-            
-            <ul class="project-bullets">
-              <li>Co-authored peer-reviewed scientific paper published in the <i>International Journal of Research in Engineering &amp; Science (IJRES)</i>.</li>
-              <li>Applies behavioral NLP and heuristic feature extraction to analyze deceptive email headers and obfuscated URLs.</li>
-              <li>Engineered resilient detection algorithms capable of flagging zero-day phishing campaigns and spoofed login surfaces.</li>
+          <!-- Project 3: CyberGuard AI -->
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-pill">Published Research &bull; Threat Intel</span>
+              <span class="project-year">IJRES 2026</span>
+            </div>
+            <h3 class="project-heading">Phishing Detection Using CyberGuard AI</h3>
+            <p class="project-desc">
+              Peer-reviewed scientific research paper published in the <i>International Journal of Research in Engineering &amp; Science (IJRES)</i>, Vol. 16, Issue 2.
+            </p>
+            <ul class="project-features">
+              <li>Applies behavioral NLP and heuristic feature extraction to dissect deceptive email headers and obfuscated URLs.</li>
+              <li>Engineered high-accuracy classifier capable of detecting zero-day phishing campaigns and spoofed login portals.</li>
             </ul>
+            <div class="project-tech-stack">
+              <span>NLP</span>
+              <span>Python</span>
+              <span>Machine Learning</span>
+              <span>Threat Intel</span>
+            </div>
           </div>
-          <div class="project-tags">
-            <span class="project-tag">Machine Learning</span>
-            <span class="project-tag">NLP</span>
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Published Research</span>
-          </div>
-        </div>
 
-        <!-- Project 4: SOC & Forensics Toolset -->
-        <div class="tilt-card project-card" style="border-top-color: var(--cyan);">
-          <div>
-            <span class="project-type-tag" style="background: var(--cyan-dim); color: var(--cyan);">Defensive Automation &bull; Tooling</span>
-            <h3 class="project-title">Python Packet Sniffer &amp; SOC Automation Suite</h3>
-            <div class="project-subtitle">Raw Sockets &bull; Scapy &bull; Linux &bull; Bash</div>
-            
-            <ul class="project-bullets">
-              <li>Low-level packet-capture and protocol-dissection utility built with Python raw sockets for granular payload extraction.</li>
+          <!-- Project 4: SOC Automation Suite -->
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-pill">SOC Tools &bull; Scripting</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-heading">Packet Sniffer &amp; SOC Automation Suite</h3>
+            <p class="project-desc">
+              Low-level packet-capture and protocol-dissection utility built with Python raw sockets for granular payload extraction.
+            </p>
+            <ul class="project-features">
               <li>Automated security reconnaissance scripts for host discovery, port scanning orchestration, and SIEM log digest parsing.</li>
-              <li>Developed conversational LLM prototype tailored for Tier-1 SOC alert triage and MITRE ATT&amp;CK response guidance.</li>
+              <li>Interactive LLM-guided SOC response script generating instant MITRE ATT&amp;CK remediation steps.</li>
             </ul>
+            <div class="project-tech-stack">
+              <span>Python</span>
+              <span>Raw Sockets</span>
+              <span>Linux</span>
+              <span>MITRE ATT&amp;CK</span>
+            </div>
           </div>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Scapy</span>
-            <span class="project-tag">Raw Sockets</span>
-            <span class="project-tag">SOC Triage</span>
-            <span class="project-tag">MITRE ATT&amp;CK</span>
+
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           5. ACHIEVEMENTS & TROPHY CABINET
+           ========================================================================= -->
+      <section class="section-block" id="achievements">
+        <div class="section-header">
+          <span class="section-tag">Competitions &amp; Hackathons</span>
+          <h2 class="section-title">Achievements &amp; Wins</h2>
+          <p class="section-subtitle">
+            Tournament-tested capability across 24-hour national hackathons and international CTF tournaments.
+          </p>
+        </div>
+
+        <div class="trophy-grid">
+          <div class="trophy-item first-place">
+            <div class="trophy-icon-box">🏆</div>
+            <div class="trophy-content">
+              <span class="trophy-badge">1st Prize Winner &bull; 16-Hour Hackathon</span>
+              <h3 class="trophy-name">Mirage CTF 2.0</h3>
+              <p class="trophy-desc">Secured First Place at the flagship competitive 16-hour CTF and hackathon organized by Amrita Vishwa Vidyapeetham, Chennai.</p>
+            </div>
+          </div>
+
+          <div class="trophy-item second-place">
+            <div class="trophy-icon-box">🥈</div>
+            <div class="trophy-content">
+              <span class="trophy-badge">2nd Prize Winner &bull; 24-Hour Hackathon</span>
+              <h3 class="trophy-name">SUSTAINVERSE 2K26</h3>
+              <p class="trophy-desc">Won Second Prize in a grueling 24-hour national hackathon held at DMI College of Engineering, Chennai.</p>
+            </div>
+          </div>
+
+          <div class="trophy-item top-ten">
+            <div class="trophy-icon-box">🎖️</div>
+            <div class="trophy-content">
+              <span class="trophy-badge">Top 10 Global &bull; International Event</span>
+              <h3 class="trophy-name">$N1PH3RS 3.0 International CTF</h3>
+              <p class="trophy-desc">Secured Top-10 global standing (9th place) in the elite $N1PH3RS 3.0 International CTF hosted at St. Joseph's Institute of Technology.</p>
+            </div>
+          </div>
+
+          <div class="trophy-item ranked">
+            <div class="trophy-icon-box">🚀</div>
+            <div class="trophy-content">
+              <span class="trophy-badge">Rank #70 of 1,253 &bull; Global Field</span>
+              <h3 class="trophy-name">z0d1ak CTF Qualifiers</h3>
+              <p class="trophy-desc">Ranked 70th out of 1,253 international competing teams representing team BitBr34kers in binary, web, and crypto challenges.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           6. EDUCATION JOURNEY
+           ========================================================================= -->
+      <section class="section-block" id="education">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education Journey</h2>
+        </div>
+
+        <div class="education-grid">
+          <div class="edu-card active-degree">
+            <div class="edu-timeline-tag">2024 &ndash; 2028 &bull; Current Degree</div>
+            <h3 class="edu-institution">Sri Shakthi Institute of Engineering and Technology</h3>
+            <p class="edu-degree">B.E. Computer Science and Engineering (Cyber Security)</p>
+            <p class="edu-location">Coimbatore, Tamil Nadu &bull; 3rd Year (5th Sem)</p>
+            <div class="edu-grade-pill">
+              <span class="grade-number">8.01</span>
+              <span class="grade-text">CGPA &bull; 0 Arrears</span>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-timeline-tag">HSC &bull; Higher Secondary</div>
+            <h3 class="edu-institution">Spark Matric Higher Secondary School</h3>
+            <p class="edu-degree">Computer Science &amp; Mathematics Stream</p>
+            <p class="edu-location">Vellore, Tamil Nadu</p>
+            <div class="edu-grade-pill">
+              <span class="grade-number">83%</span>
+              <span class="grade-text">Board Percentage</span>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-timeline-tag">SSLC &bull; Secondary School</div>
+            <h3 class="edu-institution">Government Higher Secondary School</h3>
+            <p class="edu-degree">State Board General Curriculum</p>
+            <p class="edu-location">Thiruvannamalai, Tamil Nadu</p>
+            <div class="edu-grade-pill">
+              <span class="grade-number">78%</span>
+              <span class="grade-text">Board Percentage</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           7. VERIFIED CREDENTIALS / CERTIFICATIONS (ALL 17 CERTS)
+           ========================================================================= -->
+      <section class="section-block" id="certifications">
+        <div class="section-header">
+          <span class="section-tag">Verified Credentials</span>
+          <h2 class="section-title">Certifications &amp; Awards</h2>
+          <p class="section-subtitle">
+            17 official verified credentials across CTFs, industry internships, and cybersecurity specializations. Click any card to inspect the full certificate.
+          </p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="cert-controls">
+          <div class="cert-tabs" id="certTabs">
+            <button class="cert-tab-btn active" data-filter="all">All (17)</button>
+            <button class="cert-tab-btn" data-filter="ctf">CTFs (5)</button>
+            <button class="cert-tab-btn" data-filter="internship">Internships (4)</button>
+            <button class="cert-tab-btn" data-filter="course">Courses &amp; Webinars (8)</button>
+          </div>
+          <div class="cert-search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="certSearchInput" placeholder="Search certificates...">
           </div>
         </div>
 
+        <!-- Certificate Cards Grid -->
+        <div class="certs-grid" id="certGrid">
+          
+          <div class="cert-item" data-cat="course" data-full="certs/cert_1.jpg" data-title="Building Secure & Scalable Systems: Cloud, DevOps & Cybersecurity" data-issuer="SecForgTek Solutions × MPeoples">
+            <div class="cert-thumb">
+              <img src="certs/cert_1.jpg" alt="Building Secure & Scalable Systems" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Webinar</span>
+              <h4 class="cert-item-title">Building Secure &amp; Scalable Systems</h4>
+              <p class="cert-item-issuer">SecForgTek Solutions × MPeoples</p>
+              <div class="cert-date-row"><span>16 MAY 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="ctf" data-full="certs/cert_2.jpg" data-title="UNI6CTF 1.0 — Capture The Flag" data-issuer="UNI6CTF × Cyber Leelawat · Team Bitbr34Kers">
+            <div class="cert-thumb">
+              <img src="certs/cert_2.jpg" alt="UNI6CTF 1.0" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-ctf">CTF</span>
+              <h4 class="cert-item-title">UNI6CTF 1.0 — Capture The Flag</h4>
+              <p class="cert-item-issuer">UNI6CTF × Cyber Leelawat · Team Bitbr34Kers</p>
+              <div class="cert-date-row"><span>04 APR 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_3.jpg" data-title="Social Engineering & Ethical Hacking" data-issuer="CappricioSec University">
+            <div class="cert-thumb">
+              <img src="certs/cert_3.jpg" alt="Social Engineering & Ethical Hacking" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Course</span>
+              <h4 class="cert-item-title">Social Engineering &amp; Ethical Hacking</h4>
+              <p class="cert-item-issuer">CappricioSec University</p>
+              <div class="cert-date-row"><span>15 AUG 2025</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_4.jpg" data-title="Career Essentials in Data Analysis" data-issuer="LinkedIn Learning × Microsoft">
+            <div class="cert-thumb">
+              <img src="certs/cert_4.jpg" alt="Career Essentials in Data Analysis" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Course</span>
+              <h4 class="cert-item-title">Career Essentials in Data Analysis</h4>
+              <p class="cert-item-issuer">LinkedIn Learning × Microsoft</p>
+              <div class="cert-date-row"><span>04 DEC 2024</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_5.jpg" data-title="Networking Basics" data-issuer="Cisco Networking Academy">
+            <div class="cert-thumb">
+              <img src="certs/cert_5.jpg" alt="Networking Basics" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Course</span>
+              <h4 class="cert-item-title">Networking Basics</h4>
+              <p class="cert-item-issuer">Cisco Networking Academy</p>
+              <div class="cert-date-row"><span>18 SEP 2025</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="ctf" data-full="certs/cert_6.jpg" data-title="THJCC CTF 2026 — Taiwan Joint High School Security Competition" data-issuer="HIT × NCSE Network">
+            <div class="cert-thumb">
+              <img src="certs/cert_6.jpg" alt="THJCC CTF 2026" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-ctf">CTF · Rank 156/314</span>
+              <h4 class="cert-item-title">THJCC CTF 2026 Taiwan</h4>
+              <p class="cert-item-issuer">HIT × NCSE Network</p>
+              <div class="cert-date-row"><span>2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_7.jpg" data-title="Introduction to API Pentesting & Bug Bounty 101" data-issuer="CappricioSec University">
+            <div class="cert-thumb">
+              <img src="certs/cert_7.jpg" alt="API Pentesting & Bug Bounty" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Course</span>
+              <h4 class="cert-item-title">API Pentesting &amp; Bug Bounty 101</h4>
+              <p class="cert-item-issuer">CappricioSec University</p>
+              <div class="cert-date-row"><span>15 AUG 2025</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="internship" data-full="certs/cert_8.jpg" data-title="Cyber Security Internship" data-issuer="SkillCraft Technology">
+            <div class="cert-thumb">
+              <img src="certs/cert_8.jpg" alt="Cyber Security Internship" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-internship">Internship</span>
+              <h4 class="cert-item-title">Cyber Security Internship</h4>
+              <p class="cert-item-issuer">SkillCraft Technology</p>
+              <div class="cert-date-row"><span>15 JUN – 15 JUL 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="ctf" data-full="certs/cert_9.jpg" data-title="BroncoCTF 2026 — Santa Clara University's 7th CTF" data-issuer="BroncoSec · Team BitBr34kers">
+            <div class="cert-thumb">
+              <img src="certs/cert_9.jpg" alt="BroncoCTF 2026" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-ctf">CTF · Rank #343</span>
+              <h4 class="cert-item-title">BroncoCTF 2026</h4>
+              <p class="cert-item-issuer">Santa Clara University · BroncoSec</p>
+              <div class="cert-date-row"><span>2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="ctf" data-full="certs/cert_10.jpg" data-title="UNI6CTF 1.0 — National Level Competition" data-issuer="UNI6CTF · Team BitBr34kers">
+            <div class="cert-thumb">
+              <img src="certs/cert_10.jpg" alt="UNI6CTF 1.0 National" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-ctf">CTF · Rank 36 · 3220 pts</span>
+              <h4 class="cert-item-title">UNI6CTF 1.0 National Competition</h4>
+              <p class="cert-item-issuer">UNI6CTF · Team BitBr34kers</p>
+              <div class="cert-date-row"><span>04 APR 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="internship" data-full="certs/cert_11.jpg" data-title="Cyber Security Internship — Outstanding Remarks" data-issuer="Prodigy InfoTech">
+            <div class="cert-thumb">
+              <img src="certs/cert_11.jpg" alt="Prodigy InfoTech Internship" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-internship">Internship</span>
+              <h4 class="cert-item-title">Cyber Security Internship (Outstanding)</h4>
+              <p class="cert-item-issuer">Prodigy InfoTech</p>
+              <div class="cert-date-row"><span>15 MAR – 15 APR 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="internship" data-full="certs/cert_12.jpg" data-title="Cyber Guard — CMS Penetration Testing Global Program" data-issuer="BCBuzz Technologies">
+            <div class="cert-thumb">
+              <img src="certs/cert_12.jpg" alt="Cyber Guard CMS Pentesting" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-internship">Program</span>
+              <h4 class="cert-item-title">Cyber Guard CMS Pentesting Program</h4>
+              <p class="cert-item-issuer">BCBuzz Technologies</p>
+              <div class="cert-date-row"><span>02 FEB – 30 APR 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="ctf" data-full="certs/cert_13.jpg" data-title="CREST CTF 2026" data-issuer="CREST Cyber Club, Pimpri Chinchwad University">
+            <div class="cert-thumb">
+              <img src="certs/cert_13.jpg" alt="CREST CTF 2026" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-ctf">CTF · 8-Hour Event</span>
+              <h4 class="cert-item-title">CREST CTF 2026</h4>
+              <p class="cert-item-issuer">Pimpri Chinchwad University</p>
+              <div class="cert-date-row"><span>2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_14.jpg" data-title="OWASP Coimbatore Chapter Meetup" data-issuer="OWASP × Kumaraguru College of Technology">
+            <div class="cert-thumb">
+              <img src="certs/cert_14.jpg" alt="OWASP Coimbatore Meetup" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Meetup</span>
+              <h4 class="cert-item-title">OWASP Coimbatore Chapter Meetup</h4>
+              <p class="cert-item-issuer">OWASP × Kumaraguru College</p>
+              <div class="cert-date-row"><span>01 NOV 2025</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_15.jpg" data-title="Phishing Detection Using CyberGuard AI — IJRES Vol. 16, Issue 2" data-issuer="RS Publication">
+            <div class="cert-thumb">
+              <img src="certs/cert_15.jpg" alt="IJRES Research Paper Publication" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Publication</span>
+              <h4 class="cert-item-title">Phishing Detection Research Paper</h4>
+              <p class="cert-item-issuer">IJRES Vol. 16, Issue 2 · RS Publication</p>
+              <div class="cert-date-row"><span>26 APR 2026</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_16.jpg" data-title="Career Guidance Webinar" data-issuer="Skilldunia × E-Cell IIT Hyderabad">
+            <div class="cert-thumb">
+              <img src="certs/cert_16.jpg" alt="Career Guidance Webinar" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Webinar</span>
+              <h4 class="cert-item-title">Career Guidance Webinar</h4>
+              <p class="cert-item-issuer">Skilldunia × E-Cell IIT Hyderabad</p>
+              <div class="cert-date-row"><span>17 JUL 2025</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+          <div class="cert-item" data-cat="course" data-full="certs/cert_17.jpg" data-title="Introduction to Cybersecurity" data-issuer="Cisco Networking Academy">
+            <div class="cert-thumb">
+              <img src="certs/cert_17.jpg" alt="Introduction to Cybersecurity" loading="lazy">
+              <div class="cert-hover-overlay"><span>Inspect Certificate ↗</span></div>
+            </div>
+            <div class="cert-details">
+              <span class="cert-tag tag-course">Course</span>
+              <h4 class="cert-item-title">Introduction to Cybersecurity</h4>
+              <p class="cert-item-issuer">Cisco Networking Academy</p>
+              <div class="cert-date-row"><span>14 SEP 2025</span><span class="view-link">View ↗</span></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           8. CONTACT & CONNECT SECTION
+           ========================================================================= -->
+      <section class="section-block" id="contact">
+        <div class="section-header">
+          <span class="section-tag">Direct Connection</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Available for SOC Analyst, penetration testing, security operations, and software engineering roles.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- LinkedIn -->
+          <div class="contact-card">
+            <div class="contact-card-top">
+              <div class="contact-icon-box linkedin-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <a href="https://www.linkedin.com/in/jeevi-raj-3bb912338/" target="_blank" rel="noopener" class="contact-action-btn" title="Open LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+            <div class="contact-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/jeevi-raj-3bb912338/" target="_blank" rel="noopener" class="contact-value">jeevi-raj-3bb912338</a>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-card">
+            <div class="contact-card-top">
+              <div class="contact-icon-box dark-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <button class="contact-action-btn copy-btn" data-copy="jeevicyber28@gmail.com" title="Copy Email">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:jeevicyber28@gmail.com" class="contact-value">jeevicyber28@gmail.com</a>
+          </div>
+
+          <!-- Phone -->
+          <div class="contact-card">
+            <div class="contact-card-top">
+              <div class="contact-icon-box red-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <button class="contact-action-btn copy-btn" data-copy="+918524087686" title="Copy Phone">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+            <div class="contact-label">Phone</div>
+            <a href="tel:+918524087686" class="contact-value">+91 85240 87686</a>
+          </div>
+
+          <!-- GitHub -->
+          <div class="contact-card">
+            <div class="contact-card-top">
+              <div class="contact-icon-box dark-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              <a href="https://github.com/jeevicyber28" target="_blank" rel="noopener" class="contact-action-btn" title="Open GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+            <div class="contact-label">GitHub</div>
+            <a href="https://github.com/jeevicyber28" target="_blank" rel="noopener" class="contact-value">jeevicyber28</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SPOTLIGHT PRO BOTTOM BAR (Matching Screenshot 2026-10-28 102858.png footer) -->
+    <div class="spotlight-footer-bar">
+      <div class="spotlight-brand">
+        <span class="spotlight-logo-text">Spotlight</span>
+        <span class="spotlight-pro-badge">Pro</span>
       </div>
-    </section>
-
-
-    <!-- EDUCATION SECTION -->
-    <section id="education">
-      <div class="sec-tag">Academic Background</div>
-      <h2 class="sec-title">Education Journey</h2>
-      <p class="sec-desc">Consistent academic track record spanning higher secondary excellence and specialized cybersecurity engineering.</p>
-
-      <div class="edu-timeline-grid">
-        <div class="tilt-card edu-box">
-          <div>
-            <span class="edu-stage">Undergraduate Degree &bull; 2024 &ndash; 2028</span>
-            <h3 class="edu-inst-name">Sri Shakthi Institute of Engineering and Technology</h3>
-            <p class="edu-spec">B.E. Computer Science and Engineering (Cyber Security)<br>Coimbatore, Tamil Nadu &bull; 3rd Year (5th Sem)</p>
-          </div>
-          <div class="edu-score-badge">
-            <span class="edu-score-num">8.01</span>
-            <span class="edu-score-lbl">CGPA &bull; 0 Arrears</span>
-          </div>
-        </div>
-
-        <div class="tilt-card edu-box school-box">
-          <div>
-            <span class="edu-stage">Higher Secondary Certificate (HSC)</span>
-            <h3 class="edu-inst-name">Spark Matric Higher Secondary School</h3>
-            <p class="edu-spec">Computer Science &amp; Mathematics Stream<br>Vellore, Tamil Nadu</p>
-          </div>
-          <div class="edu-score-badge">
-            <span class="edu-score-num">83%</span>
-            <span class="edu-score-lbl">Board Percentage</span>
-          </div>
-        </div>
-
-        <div class="tilt-card edu-box school-box">
-          <div>
-            <span class="edu-stage">Secondary School Leaving Certificate (SSLC)</span>
-            <h3 class="edu-inst-name">Government Higher Secondary School</h3>
-            <p class="edu-spec">State Board General Curriculum<br>Thiruvannamalai, Tamil Nadu</p>
-          </div>
-          <div class="edu-score-badge">
-            <span class="edu-score-num">78%</span>
-            <span class="edu-score-lbl">Board Percentage</span>
-          </div>
-        </div>
+      <div class="spotlight-tag-pills">
+        <span class="tag-pill">Creative</span>
+        <span class="tag-pill">Portfolio</span>
+        <span class="tag-pill">Cybersecurity</span>
       </div>
-    </section>
+    </div>
 
-
-    <!-- TECHNICAL ARSENAL -->
-    <section id="skills">
-      <div class="sec-tag">Proficiency &amp; Tooling</div>
-      <h2 class="sec-title">Technical Skills &amp; Stack</h2>
-      <p class="sec-desc">Comprehensive skill matrix across programming languages, cybersecurity disciplines, and specialized security software.</p>
-
-      <div class="skills-grid">
-        <div class="tilt-card skill-card">
-          <div class="skill-card-header">
-            <div class="skill-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <div class="skill-card-title">Programming Languages</div>
-          </div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip"><span class="dot"></span>Python</span>
-            <span class="skill-chip"><span class="dot"></span>Java</span>
-            <span class="skill-chip"><span class="dot"></span>JavaScript</span>
-            <span class="skill-chip"><span class="dot"></span>TypeScript</span>
-            <span class="skill-chip"><span class="dot"></span>C (Basics)</span>
-            <span class="skill-chip"><span class="dot"></span>Bash / Shell</span>
-          </div>
-        </div>
-
-        <div class="tilt-card skill-card">
-          <div class="skill-card-header">
-            <div class="skill-card-icon" style="color: var(--cyan); background: var(--cyan-dim);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </div>
-            <div class="skill-card-title">Cybersecurity Disciplines</div>
-          </div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip"><span class="dot"></span>Ethical Hacking</span>
-            <span class="skill-chip"><span class="dot"></span>SOC Operations</span>
-            <span class="skill-chip"><span class="dot"></span>Penetration Testing</span>
-            <span class="skill-chip"><span class="dot"></span>Digital Forensics</span>
-            <span class="skill-chip"><span class="dot"></span>Web Security (OWASP)</span>
-            <span class="skill-chip"><span class="dot"></span>CTF Competition</span>
-          </div>
-        </div>
-
-        <div class="tilt-card skill-card">
-          <div class="skill-card-header">
-            <div class="skill-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
-            <div class="skill-card-title">Security &amp; Forensic Tools</div>
-          </div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip"><span class="dot"></span>Kali Linux</span>
-            <span class="skill-chip"><span class="dot"></span>Burp Suite</span>
-            <span class="skill-chip"><span class="dot"></span>Wireshark</span>
-            <span class="skill-chip"><span class="dot"></span>Nmap</span>
-            <span class="skill-chip"><span class="dot"></span>Autopsy</span>
-            <span class="skill-chip"><span class="dot"></span>Scapy</span>
-          </div>
-        </div>
-
-        <div class="tilt-card skill-card">
-          <div class="skill-card-header">
-            <div class="skill-card-icon" style="color: var(--cyan); background: var(--cyan-dim);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            </div>
-            <div class="skill-card-title">Full-Stack &amp; Frameworks</div>
-          </div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip"><span class="dot"></span>Node.js / Express</span>
-            <span class="skill-chip"><span class="dot"></span>React</span>
-            <span class="skill-chip"><span class="dot"></span>FastAPI</span>
-            <span class="skill-chip"><span class="dot"></span>PostgreSQL</span>
-            <span class="skill-chip"><span class="dot"></span>Socket.IO</span>
-            <span class="skill-chip"><span class="dot"></span>OpenCV / YOLO</span>
-          </div>
-        </div>
-
-        <div class="tilt-card skill-card">
-          <div class="skill-card-header">
-            <div class="skill-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            </div>
-            <div class="skill-card-title">Networking &amp; Systems</div>
-          </div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip"><span class="dot"></span>TCP / IP Protocols</span>
-            <span class="skill-chip"><span class="dot"></span>DNS &amp; Routing</span>
-            <span class="skill-chip"><span class="dot"></span>HTTP / HTTPS</span>
-            <span class="skill-chip"><span class="dot"></span>Linux Administration</span>
-            <span class="skill-chip"><span class="dot"></span>Git &amp; GitHub</span>
-          </div>
-        </div>
-
-        <div class="tilt-card skill-card">
-          <div class="skill-card-header">
-            <div class="skill-card-icon" style="color: var(--cyan); background: var(--cyan-dim);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            </div>
-            <div class="skill-card-title">Languages &amp; Aspirations</div>
-          </div>
-          <div class="skill-chips-wrap">
-            <span class="skill-chip"><span class="dot"></span>Tamil (Native)</span>
-            <span class="skill-chip"><span class="dot"></span>English (Fluent)</span>
-            <span class="skill-chip"><span class="dot"></span>Telugu</span>
-            <span class="skill-chip"><span class="dot"></span>SOC Analyst Target</span>
-            <span class="skill-chip"><span class="dot"></span>DevSecOps Target</span>
-          </div>
-        </div>
+    <!-- WINDOW FOOTER -->
+    <footer class="window-footer">
+      <div class="footer-left">
+        <strong>Jeeviraj V</strong> &bull; Cybersecurity &amp; Ethical Hacking Portfolio
+        <div class="footer-sub">Sri Shakthi Institute of Engineering &amp; Technology &bull; Thiruvannamalai, Tamil Nadu</div>
       </div>
-    </section>
-
-
-    <!-- CERTIFICATIONS SECTION (ALL 17 ORIGINAL CERTS + RESUME HIGHLIGHTS) -->
-    <section id="certifications">
-      <div class="sec-tag">Verified Credentials</div>
-      <h2 class="sec-title">Certifications &amp; Credentials</h2>
-      <p class="sec-desc">Backed by official issued credentials including Certified LLM Security Expert (CLLMSE), Google Cybersecurity, Cisco, and 10+ CTF awards.</p>
-
-      <div class="cert-filter-bar">
-        <div class="cert-filter-group" id="certFilterGroup">
-          <button class="cert-filter-btn active" data-filter="all">All (17)</button>
-          <button class="cert-filter-btn" data-filter="ctf">CTF Competitions (5)</button>
-          <button class="cert-filter-btn" data-filter="internship">Internships &amp; Programs (4)</button>
-          <button class="cert-filter-btn" data-filter="course">Courses &amp; Publications (8)</button>
-        </div>
-        <input type="text" id="certSearch" class="cert-search-input" placeholder="Search credentials...">
+      <div class="footer-right">
+        <a href="#home" class="back-to-top">Back to top ↑</a>
       </div>
-
-      <div class="cert-grid" id="certGrid">
-
-        <div class="cert-card" data-cat="course" data-full="certs/cert_1.jpg" data-title="Building Secure &amp; Scalable Systems: Cloud, DevOps &amp; Cybersecurity" data-issuer="SecForgTek Solutions × MPeoples">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_1.jpg" alt="Building Secure &amp; Scalable Systems: Cloud, DevOps &amp; Cybersecurity" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Webinar</span>
-            </div>
-            <div class="cert-title">Building Secure &amp; Scalable Systems: Cloud, DevOps &amp; Cybersecurity</div>
-            <div class="cert-issuer">SecForgTek Solutions × MPeoples</div>
-            <div class="cert-footer">
-              <span class="cert-date">16 MAY 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="ctf" data-full="certs/cert_2.jpg" data-title="UNI6CTF 1.0 — Capture The Flag" data-issuer="UNI6CTF × Cyber Leelawat · Team Bitbr34Kers">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_2.jpg" alt="UNI6CTF 1.0 — Capture The Flag" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-ctf">CTF</span>
-            </div>
-            <div class="cert-title">UNI6CTF 1.0 — Capture The Flag</div>
-            <div class="cert-issuer">UNI6CTF × Cyber Leelawat · Team Bitbr34Kers</div>
-            <div class="cert-footer">
-              <span class="cert-date">04 APR 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_3.jpg" data-title="Social Engineering &amp; Ethical Hacking" data-issuer="CappricioSec University">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_3.jpg" alt="Social Engineering &amp; Ethical Hacking" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Course</span>
-            </div>
-            <div class="cert-title">Social Engineering &amp; Ethical Hacking</div>
-            <div class="cert-issuer">CappricioSec University</div>
-            <div class="cert-footer">
-              <span class="cert-date">15 AUG 2025</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_4.jpg" data-title="Career Essentials in Data Analysis" data-issuer="LinkedIn Learning × Microsoft">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_4.jpg" alt="Career Essentials in Data Analysis" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Course</span>
-            </div>
-            <div class="cert-title">Career Essentials in Data Analysis</div>
-            <div class="cert-issuer">LinkedIn Learning × Microsoft</div>
-            <div class="cert-footer">
-              <span class="cert-date">04 DEC 2024</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_5.jpg" data-title="Networking Basics" data-issuer="Cisco Networking Academy">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_5.jpg" alt="Networking Basics" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Course</span>
-            </div>
-            <div class="cert-title">Networking Basics</div>
-            <div class="cert-issuer">Cisco Networking Academy</div>
-            <div class="cert-footer">
-              <span class="cert-date">18 SEP 2025</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="ctf" data-full="certs/cert_6.jpg" data-title="THJCC CTF 2026 — Taiwan Joint High School Security Competition" data-issuer="HIT × NCSE Network">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_6.jpg" alt="THJCC CTF 2026 — Taiwan Joint High School Security Competition" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-ctf">CTF · Rank 156/314</span>
-            </div>
-            <div class="cert-title">THJCC CTF 2026 — Taiwan Joint High School Security Competition</div>
-            <div class="cert-issuer">HIT × NCSE Network</div>
-            <div class="cert-footer">
-              <span class="cert-date">2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_7.jpg" data-title="Introduction to API Pentesting &amp; Bug Bounty 101" data-issuer="CappricioSec University">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_7.jpg" alt="Introduction to API Pentesting &amp; Bug Bounty 101" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Course</span>
-            </div>
-            <div class="cert-title">Introduction to API Pentesting &amp; Bug Bounty 101</div>
-            <div class="cert-issuer">CappricioSec University</div>
-            <div class="cert-footer">
-              <span class="cert-date">15 AUG 2025</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="internship" data-full="certs/cert_8.jpg" data-title="Cyber Security Internship" data-issuer="SkillCraft Technology">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_8.jpg" alt="Cyber Security Internship" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-internship">Internship</span>
-            </div>
-            <div class="cert-title">Cyber Security Internship</div>
-            <div class="cert-issuer">SkillCraft Technology</div>
-            <div class="cert-footer">
-              <span class="cert-date">15 JUN – 15 JUL 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="ctf" data-full="certs/cert_9.jpg" data-title="BroncoCTF 2026 — Santa Clara University's 7th CTF" data-issuer="BroncoSec · Team BitBr34kers">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_9.jpg" alt="BroncoCTF 2026 — Santa Clara University's 7th CTF" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-ctf">CTF · Rank #343</span>
-            </div>
-            <div class="cert-title">BroncoCTF 2026 — Santa Clara University's 7th CTF</div>
-            <div class="cert-issuer">BroncoSec · Team BitBr34kers</div>
-            <div class="cert-footer">
-              <span class="cert-date">2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="ctf" data-full="certs/cert_10.jpg" data-title="UNI6CTF 1.0 — National Level Competition" data-issuer="UNI6CTF · Team BitBr34kers">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_10.jpg" alt="UNI6CTF 1.0 — National Level Competition" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-ctf">CTF · Rank 36 · 3220 pts</span>
-            </div>
-            <div class="cert-title">UNI6CTF 1.0 — National Level Competition</div>
-            <div class="cert-issuer">UNI6CTF · Team BitBr34kers</div>
-            <div class="cert-footer">
-              <span class="cert-date">04 APR 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="internship" data-full="certs/cert_11.jpg" data-title="Cyber Security Internship — Outstanding Remarks" data-issuer="Prodigy InfoTech">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_11.jpg" alt="Cyber Security Internship — Outstanding Remarks" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-internship">Internship</span>
-            </div>
-            <div class="cert-title">Cyber Security Internship — Outstanding Remarks</div>
-            <div class="cert-issuer">Prodigy InfoTech</div>
-            <div class="cert-footer">
-              <span class="cert-date">15 MAR – 15 APR 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="internship" data-full="certs/cert_12.jpg" data-title="Cyber Guard — CMS Penetration Testing Global Program" data-issuer="BCBuzz Technologies">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_12.jpg" alt="Cyber Guard — CMS Penetration Testing Global Program" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-internship">Program</span>
-            </div>
-            <div class="cert-title">Cyber Guard — CMS Penetration Testing Global Program</div>
-            <div class="cert-issuer">BCBuzz Technologies</div>
-            <div class="cert-footer">
-              <span class="cert-date">02 FEB – 30 APR 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="ctf" data-full="certs/cert_13.jpg" data-title="CREST CTF 2026" data-issuer="CREST Cyber Club, Pimpri Chinchwad University">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_13.jpg" alt="CREST CTF 2026" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-ctf">CTF · 8-hour event</span>
-            </div>
-            <div class="cert-title">CREST CTF 2026</div>
-            <div class="cert-issuer">CREST Cyber Club, Pimpri Chinchwad University</div>
-            <div class="cert-footer">
-              <span class="cert-date">2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_14.jpg" data-title="OWASP Coimbatore Chapter Meetup" data-issuer="OWASP × Kumaraguru College of Technology">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_14.jpg" alt="OWASP Coimbatore Chapter Meetup" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Meetup</span>
-            </div>
-            <div class="cert-title">OWASP Coimbatore Chapter Meetup</div>
-            <div class="cert-issuer">OWASP × Kumaraguru College of Technology</div>
-            <div class="cert-footer">
-              <span class="cert-date">01 NOV 2025</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_15.jpg" data-title="&quot;Phishing Detection Using CyberGuard AI&quot; — IJRES Vol. 16, Issue 2" data-issuer="RS Publication">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_15.jpg" alt=""Phishing Detection Using CyberGuard AI" — IJRES Vol. 16, Issue 2" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Publication</span>
-            </div>
-            <div class="cert-title">"Phishing Detection Using CyberGuard AI" — IJRES Vol. 16, Issue 2</div>
-            <div class="cert-issuer">RS Publication</div>
-            <div class="cert-footer">
-              <span class="cert-date">26 APR 2026</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_16.jpg" data-title="Career Guidance Webinar" data-issuer="Skilldunia × E-Cell IIT Hyderabad">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_16.jpg" alt="Career Guidance Webinar" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Webinar</span>
-            </div>
-            <div class="cert-title">Career Guidance Webinar</div>
-            <div class="cert-issuer">Skilldunia × E-Cell IIT Hyderabad</div>
-            <div class="cert-footer">
-              <span class="cert-date">17 JUL 2025</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-        <div class="cert-card" data-cat="course" data-full="certs/cert_17.jpg" data-title="Introduction to Cybersecurity" data-issuer="Cisco Networking Academy">
-          <div class="cert-thumb-box">
-            <img src="certs/cert_17.jpg" alt="Introduction to Cybersecurity" loading="lazy">
-            <div class="cert-view-overlay">
-              <span>Inspect Certificate ↗</span>
-            </div>
-          </div>
-          <div class="cert-body">
-            <div>
-              <span class="cert-badge badge-cat-course">Course</span>
-            </div>
-            <div class="cert-title">Introduction to Cybersecurity</div>
-            <div class="cert-issuer">Cisco Networking Academy</div>
-            <div class="cert-footer">
-              <span class="cert-date">14 SEP 2025</span>
-              <span class="cert-cta-link">Inspect ↗</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-      <div class="sec-tag">Direct Connection</div>
-      <h2 class="sec-title">Get In Touch</h2>
-      <p class="sec-desc">Seeking SOC Analyst, penetration testing, or software engineering roles. Reach out directly.</p>
-
-      <div class="contact-grid">
-        <div class="tilt-card contact-card">
-          <div class="contact-card-top">
-            <div class="contact-icon-box" style="background: rgba(0, 119, 181, 0.2); color: #0077B5;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </div>
-            <a href="https://www.linkedin.com/in/jeevi-raj-3bb912338/" target="_blank" rel="noopener" class="contact-copy-btn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
-          <div>
-            <div class="contact-k">LinkedIn</div>
-            <a href="https://www.linkedin.com/in/jeevi-raj-3bb912338/" target="_blank" rel="noopener" class="contact-v">jeevi-raj-3bb912338</a>
-          </div>
-        </div>
-
-        <div class="tilt-card contact-card">
-          <div class="contact-card-top">
-            <div class="contact-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-            <button class="contact-copy-btn" onclick="copyText('jeevicyber28@gmail.com', 'Email copied!')">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            </button>
-          </div>
-          <div>
-            <div class="contact-k">Email</div>
-            <a href="mailto:jeevicyber28@gmail.com" class="contact-v">jeevicyber28@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="tilt-card contact-card">
-          <div class="contact-card-top">
-            <div class="contact-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </div>
-            <button class="contact-copy-btn" onclick="copyText('+918524087686', 'Phone copied!')">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            </button>
-          </div>
-          <div>
-            <div class="contact-k">Phone</div>
-            <a href="tel:+918524087686" class="contact-v">+91 85240 87686</a>
-          </div>
-        </div>
-
-        <div class="tilt-card contact-card">
-          <div class="contact-card-top">
-            <div class="contact-icon-box" style="background: rgba(255, 255, 255, 0.1); color: #fff;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </div>
-            <a href="https://github.com/jeevicyber28" target="_blank" rel="noopener" class="contact-copy-btn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
-          </div>
-          <div>
-            <div class="contact-k">GitHub</div>
-            <a href="https://github.com/jeevicyber28" target="_blank" rel="noopener" class="contact-v">jeevicyber28</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </footer>
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-inner">
-        <div>
-          <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--text);">Jeeviraj V &bull; 3D Cybersecurity Portfolio</div>
-          <div style="font-size: 0.84rem; color: var(--subtext); margin-top: 4px;">B.E. CSE (Cyber Security) &bull; Sri Shakthi Institute &bull; Thiruvannamalai, Tamil Nadu</div>
-        </div>
-        <div>
-          <div class="footer-status">
-            <span class="logo-dot"></span>
-            <span>SYSTEM ENCRYPTED &bull; 0 ARREARS &bull; 8.01 CGPA</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- LIGHTBOX MODAL -->
+  <!-- LIGHTBOX MODAL (Full Certificate Inspection) -->
   <div class="lightbox-modal" id="lightboxModal">
-    <div class="lightbox-content">
+    <div class="lightbox-dialog">
       <div class="lightbox-header">
-        <div style="font-family: var(--font-display); font-weight: 700; color: var(--text);" id="lightboxTitle">Certificate Preview</div>
-        <button class="lightbox-close" id="lightboxCloseBtn">✕</button>
+        <div class="lightbox-title" id="lightboxTitle">Certificate Preview</div>
+        <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close modal">✕</button>
       </div>
-      <div class="lightbox-img-box">
-        <img id="lightboxImg" src="" alt="Certificate Preview">
+      <div class="lightbox-body">
+        <img src="" alt="Certificate Preview" id="lightboxImage">
       </div>
     </div>
   </div>
 
-  <!-- Toast -->
-  <div class="toast" id="toast">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-    <span id="toastMsg">Action completed</span>
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-popup" id="toastPopup">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMessage">Copied to clipboard!</span>
   </div>
 
-  <!-- Three.js -->
-  <script src="vendor/three.min.js"></script>
-  <script>
-    if (typeof THREE === 'undefined') {
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-      document.head.appendChild(script);
-    }
-  </script>
-
-  <!-- 3D Background & Interactive Controls -->
-  <script>
-    (function initBackground3D() {
-      const canvas = document.getElementById('bg-canvas');
-      if (!canvas) return;
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 85;
-      camera.position.y = 20;
-
-      const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      const particleCount = 420;
-      const geometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(particleCount * 3);
-      const velocities = [];
-
-      for (let i = 0; i < particleCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 160;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 100 + 10;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 100;
-
-        velocities.push({
-          x: (Math.random() - 0.5) * 0.04,
-          y: (Math.random() - 0.5) * 0.04,
-          z: (Math.random() - 0.5) * 0.04
-        });
-      }
-
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-      const getParticleTexture = () => {
-        const c = document.createElement('canvas');
-        c.width = 32;
-        c.height = 32;
-        const ctx = c.getContext('2d');
-        const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-        grad.addColorStop(0, '#FACC15');
-        grad.addColorStop(0.35, '#EAB308');
-        grad.addColorStop(1, 'transparent');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, 32, 32);
-        return new THREE.CanvasTexture(c);
-      };
-
-      const pMaterial = new THREE.PointsMaterial({
-        color: 0xFACC15,
-        size: 2.2,
-        map: getParticleTexture(),
-        transparent: true,
-        opacity: 0.72,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-      });
-
-      const particleSystem = new THREE.Points(geometry, pMaterial);
-      scene.add(particleSystem);
-
-      const gridHelper = new THREE.GridHelper(260, 40, 0xFACC15, 0x1F242C);
-      gridHelper.position.y = -35;
-      gridHelper.material.opacity = 0.25;
-      gridHelper.material.transparent = true;
-      scene.add(gridHelper);
-
-      let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
-
-      window.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-      });
-
-      function animate() {
-        requestAnimationFrame(animate);
-
-        targetX += (mouseX - targetX) * 0.04;
-        targetY += (mouseY - targetY) * 0.04;
-
-        camera.position.x = targetX * 14;
-        camera.position.y = 20 - targetY * 10;
-        camera.lookAt(0, 0, 0);
-
-        const pos = geometry.attributes.position.array;
-        for (let i = 0; i < particleCount; i++) {
-          pos[i * 3] += velocities[i].x;
-          pos[i * 3 + 1] += velocities[i].y;
-          pos[i * 3 + 2] += velocities[i].z;
-
-          if (Math.abs(pos[i * 3]) > 80) velocities[i].x *= -1;
-          if (Math.abs(pos[i * 3 + 1]) > 50) velocities[i].y *= -1;
-          if (Math.abs(pos[i * 3 + 2]) > 50) velocities[i].z *= -1;
-        }
-        geometry.attributes.position.needsUpdate = true;
-
-        gridHelper.rotation.y += 0.0006;
-        particleSystem.rotation.y += 0.0004;
-
-        renderer.render(scene, camera);
-      }
-
-      animate();
-
-      window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      });
-    })();
-
-    // ----------------- CARD 3D TILT EFFECT -----------------
-    (function init3DTilt() {
-      const cards = document.querySelectorAll('.tilt-card');
-      cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          const rotateX = -((y - centerY) / centerY) * 6;
-          const rotateY = ((x - centerX) / centerX) * 6;
-
-          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(6px)`;
-          card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(250, 204, 21, 0.08), var(--card) 65%)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-          card.style.background = 'var(--card)';
-        });
-      });
-    })();
-
-    // ----------------- CERTIFICATE FILTERING & SEARCH -----------------
-    const filterBtns = document.querySelectorAll('.cert-filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
-    const certSearch = document.getElementById('certSearch');
-
-    function applyCertFilter() {
-      const activeFilter = document.querySelector('.cert-filter-btn.active').dataset.filter;
-      const query = certSearch.value.trim().toLowerCase();
-
-      certCards.forEach(card => {
-        const cat = card.dataset.cat;
-        const title = (card.dataset.title || '').toLowerCase();
-        const issuer = (card.dataset.issuer || '').toLowerCase();
-
-        const matchCat = (activeFilter === 'all' || cat === activeFilter);
-        const matchQuery = (query === '' || title.includes(query) || issuer.includes(query));
-
-        if (matchCat && matchQuery) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        applyCertFilter();
-      });
-    });
-
-    if (certSearch) certSearch.addEventListener('input', applyCertFilter);
-
-    // ----------------- LIGHTBOX PREVIEW -----------------
-    const lightboxModal = document.getElementById('lightboxModal');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-
-    document.getElementById('certGrid').addEventListener('click', (e) => {
-      const card = e.target.closest('.cert-card');
-      if (!card) return;
-
-      lightboxImg.src = card.dataset.full;
-      lightboxTitle.textContent = card.dataset.title || 'Certificate Preview';
-      lightboxModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-
-    function closeLightbox() {
-      lightboxModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    lightboxCloseBtn.addEventListener('click', closeLightbox);
-    lightboxModal.addEventListener('click', (e) => {
-      if (e.target === lightboxModal) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightboxModal.classList.contains('open')) closeLightbox();
-    });
-
-    // ----------------- TOAST & COPY NOTIFICATION -----------------
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMsg');
-      toastMsg.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => { toast.classList.remove('show'); }, 3000);
-    }
-
-    function copyText(text, successMsg) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(successMsg);
-      }).catch(() => {
-        showToast('Copied: ' + text);
-      });
-    }
-
-    // ----------------- MOBILE NAV TOGGLE -----------------
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // ----------------- ACTIVE SCROLL SPY -----------------
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.pageYOffset + 120;
-      sections.forEach(sec => {
-        const top = sec.offsetTop;
-        const height = sec.offsetHeight;
-        const id = sec.getAttribute('id');
-        if (scrollY >= top && scrollY < top + height) {
-          navLinks.querySelectorAll('a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + id) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
